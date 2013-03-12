@@ -15,6 +15,7 @@ import org.openqa.selenium.iphone.IPhoneDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import com.opera.core.systems.OperaDriver;
 import ru.st.selenium.util.Browser;
@@ -32,6 +33,7 @@ public class WebDriverFactory {
 	/* Browsers constants */
 	public static final String CHROME = "chrome";
 	public static final String FIREFOX = "firefox";
+	public static final String SAFARI = "safari";
 	public static final String OPERA = "opera";
 	public static final String INTERNET_EXPLORER = "ie";
 	public static final String HTML_UNIT = "htmlunit";
@@ -97,6 +99,8 @@ public class WebDriverFactory {
 			.setCapability(
 					InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
 					true);
+		} else if (SAFARI.equals(browserName)) {
+			capability = DesiredCapabilities.safari();
 		} else if (OPERA.equals(browserName)) {
 			capability = DesiredCapabilities.opera();
 		} else if (ANDROID.equals(browserName)) {
@@ -149,9 +153,8 @@ public class WebDriverFactory {
 		}
 
 		if (CHROME.equals(browser)) {
-			setChromeDriver();
-
 			webDriver = new ChromeDriver();
+
 		} else if (FIREFOX.equals(browser)) {
 
 			FirefoxProfile ffProfile = new FirefoxProfile();
@@ -169,6 +172,9 @@ public class WebDriverFactory {
 
 		} else if (OPERA.equals(browser)) {
 			webDriver = new OperaDriver();
+
+		} else if (SAFARI.equals(browser)) {
+			webDriver = new SafariDriver();
 
 		} else if (IPHONE.equals(browser)) {
 			try {
@@ -228,16 +234,6 @@ public class WebDriverFactory {
 			capability.setVersion(version);
 		}
 		return capability;
-	}
-
-	/*
-	 * Helper method to set ChromeDriver location into the right ststem property
-	 */
-	private static void setChromeDriver() {
-		String os = System.getProperty("os.name").toLowerCase().substring(0, 3);
-		String chromeBinary = "src/main/resources/drivers/chrome/chromedriver"
-				+ (os.equals("win") ? ".exe" : "");
-		System.setProperty("webdriver.chrome.driver", chromeBinary);
 	}
 
 }
