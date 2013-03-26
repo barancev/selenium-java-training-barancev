@@ -9,9 +9,10 @@ public class LoginTest extends ru.st.selenium.pages.TestBase {
 
   @BeforeMethod
   public void mayBeLogout() {
-    if (app.getUserHelper().isLoggedIn()) {
-      app.getUserHelper().logout();
+    if (app.getUserHelper().isNotLoggedIn()) {
+      return;
     }
+    app.getUserHelper().logout();
   }
   
   @Test

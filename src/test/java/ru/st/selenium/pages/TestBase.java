@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 import ru.st.selenium.applogic.ApplicationManager;
 import ru.st.selenium.applogic0.ApplicationManager0;
 import ru.st.selenium.applogic1.ApplicationManager1;
+import ru.st.selenium.applogic2.ApplicationManager2;
 
 public class TestBase {
 
@@ -13,7 +14,7 @@ public class TestBase {
 
 	@BeforeClass
 	public void init() {
-		app = new ApplicationManager1();
+		app = new ApplicationManager2();
 	}
 	
 	@AfterSuite
