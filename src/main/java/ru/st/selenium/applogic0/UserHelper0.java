@@ -9,6 +9,9 @@ public class UserHelper0 implements UserHelper {
 
   @Override
   public void loginAs(User user) {
+    if (user.getPassword().equals("wrong")) {
+      return;
+    }
     this.user = user;
   }
 
