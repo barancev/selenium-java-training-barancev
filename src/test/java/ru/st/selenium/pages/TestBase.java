@@ -16,6 +16,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 import ru.st.selenium.applogic.ApplicationManager;
+import ru.st.selenium.applogic0.ApplicationManager0;
 import ru.st.selenium.util.PropertyLoader;
 import ru.st.selenium.util.Browser;
 import ru.st.selenium.webdriver.WebDriverFactory;
@@ -56,6 +57,8 @@ public class TestBase {
 		driver = WebDriverFactory.getInstance(gridHubUrl, browser, username,
 				password);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		app = new ApplicationManager0();
 	}
 
 	@AfterSuite(alwaysRun = true)
