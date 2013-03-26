@@ -25,17 +25,18 @@ public class NavigationHelper2 extends DriverBasedHelper implements NavigationHe
   
   @Override
   public void gotoUserProfilePage() {
-    driver.findElement(By.cssSelector("nav a[href $= '?go=profile']"))
-      .click();
+    pages.internalPage.ensurePageLoaded().clickUserProfilePage();
+    //driver.findElement(By.cssSelector("nav a[href $= '?go=profile']"))
+    //  .click();
     // openRelativeUrl("?go=profile");
   }
 
   @Override
   public void gotoUserManagementPage() {
-    pages.internalPage.ensurePageLoaded().clickUserProfilePage();
+    pages.internalPage.ensurePageLoaded().clickUserManagementLink();
     //driver.findElement(By.cssSelector("nav a[href $= '?go=users']"))
     //  .click();
-    openRelativeUrl("?go=users");
+    //openRelativeUrl("?go=users");
   }
 
 }

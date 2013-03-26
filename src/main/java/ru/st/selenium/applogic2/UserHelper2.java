@@ -12,7 +12,7 @@ public class UserHelper2 extends DriverBasedHelper implements UserHelper {
 
   @Override
   public void loginAs(User user) {
-    pages.loginPage
+    pages.loginPage.ensurePageLoaded()
       .setUsernameField(user.getLogin())
       .setPasswordField(user.getPassword())
       .clickSubmitButton();
@@ -20,7 +20,7 @@ public class UserHelper2 extends DriverBasedHelper implements UserHelper {
 
   @Override
   public void logout() {
-    pages.internalPage
+    pages.internalPage.ensurePageLoaded()
       .clickLogoutLink();
   }
 
@@ -41,7 +41,7 @@ public class UserHelper2 extends DriverBasedHelper implements UserHelper {
   }
   
   private User getLoggedUser() {
-    UserProfilePage userProfile = pages.internalPage
+    UserProfilePage userProfile = pages.internalPage.ensurePageLoaded()
       .clickUserProfilePage()
       .ensurePageLoaded();
     return new User()
