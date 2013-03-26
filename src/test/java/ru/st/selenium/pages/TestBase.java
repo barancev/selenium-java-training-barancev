@@ -15,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
+import ru.st.selenium.applogic.ApplicationManager;
 import ru.st.selenium.util.PropertyLoader;
 import ru.st.selenium.util.Browser;
 import ru.st.selenium.webdriver.WebDriverFactory;
@@ -36,6 +37,8 @@ public class TestBase {
 	protected String baseUrl;
 
 	protected Browser browser;
+	
+	protected ApplicationManager app;
 
 	@BeforeClass
 	public void init() {
