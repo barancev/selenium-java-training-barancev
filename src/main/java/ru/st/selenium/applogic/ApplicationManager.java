@@ -4,5 +4,6 @@ public interface ApplicationManager {
 
 	UserHelper getUserHelper();
 	FilmHelper getFilmHelper();
+  NavigationHelper getNavigationHelper();
 
 }

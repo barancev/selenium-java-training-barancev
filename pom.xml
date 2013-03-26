@@ -71,7 +71,7 @@
 				<user.username></user.username>
 				<user.password></user.password>
 				<grid2.hub></grid2.hub>
-				<site.url>http://192.168.56.101/</site.url>
+				<site.url>http://localhost/php4dvd/</site.url>
 				<browser.name>firefox</browser.name>
 				<browser.version></browser.version>
 				<browser.platform></browser.platform>
@@ -87,7 +87,7 @@
 				<user.username></user.username>
 				<user.password></user.password>
 				<grid2.hub></grid2.hub>
-				<site.url>http://192.168.56.101/</site.url>
+				<site.url>http://localhost/php4dvd/</site.url>
 				<browser.name>ie</browser.name>
 				<browser.version></browser.version>
 				<browser.platform></browser.platform>
@@ -100,7 +100,7 @@
 				<user.username></user.username>
 				<user.password></user.password>
 				<grid2.hub></grid2.hub>
-				<site.url>http://192.168.56.101/</site.url>
+				<site.url>http://localhost/php4dvd/</site.url>
 				<browser.name>chrome</browser.name>
 				<browser.version></browser.version>
 				<browser.platform></browser.platform>
@@ -113,7 +113,7 @@
 				<user.username></user.username>
 				<user.password></user.password>
 				<grid2.hub>http://192.168.56.102:4444/wd/hub</grid2.hub>
-				<site.url>http://192.168.56.101/</site.url>
+				<site.url>http://192.168.56.101/php4dvd/</site.url>
 				<browser.name>firefox</browser.name>
 				<browser.version></browser.version>
 				<browser.platform></browser.platform>
