@@ -63,4 +63,11 @@ public class ApplicationManager1 implements ApplicationManager {
   protected String getBaseUrl() {
     return baseUrl;
   }
+
+  @Override
+  public void stop() {
+    if (driver != null) {
+      driver.quit();
+    }
+  }
 }

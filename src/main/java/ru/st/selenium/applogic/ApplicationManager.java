@@ -6,4 +6,6 @@ public interface ApplicationManager {
 	FilmHelper getFilmHelper();
   NavigationHelper getNavigationHelper();
 
+  void stop();
+
 }

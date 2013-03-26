@@ -26,4 +26,10 @@ public class ApplicationManager0 implements ApplicationManager {
     return null;
   }
 
+  @Override
+  public void stop() {
+    // TODO Auto-generated method stub
+    
+  }
+
 }
