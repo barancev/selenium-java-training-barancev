@@ -5,19 +5,16 @@ import java.net.URL;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.android.AndroidDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.iphone.IPhoneDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import com.opera.core.systems.OperaDriver;
 import ru.st.selenium.util.Browser;
 import ru.st.selenium.webdriver.AuthenticatedHtmlUnitDriver;
 
@@ -101,12 +98,6 @@ public class WebDriverFactory {
 					true);
 		} else if (SAFARI.equals(browserName)) {
 			capability = DesiredCapabilities.safari();
-		} else if (OPERA.equals(browserName)) {
-			capability = DesiredCapabilities.opera();
-		} else if (ANDROID.equals(browserName)) {
-			capability = DesiredCapabilities.android();
-		} else if (IPHONE.equals(browserName)) {
-			capability = DesiredCapabilities.iphone();
 		} else {
 
 			capability = DesiredCapabilities.htmlUnit();
@@ -170,21 +161,8 @@ public class WebDriverFactory {
 		} else if (INTERNET_EXPLORER.equals(browser)) {
 			webDriver = new InternetExplorerDriver();
 
-		} else if (OPERA.equals(browser)) {
-			webDriver = new OperaDriver();
-
 		} else if (SAFARI.equals(browser)) {
 			webDriver = new SafariDriver();
-
-		} else if (IPHONE.equals(browser)) {
-			try {
-				webDriver = new IPhoneDriver();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-		} else if (ANDROID.equals(browser)) {
-			webDriver = new AndroidDriver();
 
 		} else {
 
